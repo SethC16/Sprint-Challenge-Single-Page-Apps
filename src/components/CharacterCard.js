@@ -3,9 +3,9 @@ import { Card, CardText, CardImg,  CardBody, CardTitle } from 'reactstrap';
 
 
 export default function CharacterCard(props) {
+ 
   return (
     <div>
-
         <Card>
           <CardImg top width="100%" src={props.image} alt="Card image"/>
           <CardBody>
@@ -15,7 +15,7 @@ export default function CharacterCard(props) {
           <CardText>Gender: {props.gender}</CardText>
           </CardBody>
         </Card>
-    
     </div>
+  
     );
 }

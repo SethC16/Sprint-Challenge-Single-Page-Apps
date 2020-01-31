@@ -4,9 +4,10 @@ import axios from 'axios';
 import CharacterCard from './CharacterCard';
 import SearchForm from './SearchForm';
 
-export default function CharacterList(props) {
+export default function CharacterList() {
   // TODO: Add useState to track data from useEffect
   const [ character, setCharacter ] = useState([]);
+  
   
   
 
@@ -24,22 +25,22 @@ export default function CharacterList(props) {
     });
   }, []);
 
-
+ 
 
   return (
     <section className="character-list">
       <Link className="links" to={'/'}>Home</Link>
-      <SearchForm className="search" />
+      <SearchForm setCharacter={setCharacter}/>
       <div className="grid-view">
       {character.map(characters => {
         return (
        <CharacterCard
         key={characters.id}
-        image={characters.image}
         name={characters.name}
         status={characters.status}
         species={characters.species}
         gender={characters.gender}
+        image={characters.image}
         />
         )
       })}
